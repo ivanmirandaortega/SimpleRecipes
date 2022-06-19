@@ -6,7 +6,7 @@ const Images = () => {
   return (
     <Wrapper>
       <article>
-        <h4>constrained / default</h4>
+        <h4>constrained</h4>
         <StaticImage
           src="../assets/images/recipe-1.jpeg"
           alt="food"
@@ -22,9 +22,10 @@ const Images = () => {
           src="../assets/images/recipe-1.jpeg"
           alt="food"
           placeholder="blurred"
-          layout="constrained"
+          layout="fixed"
+          width={200}
           className="example-img"
-          as="section"
+          as="div"
         />
       </article>
       <article>
@@ -34,7 +35,6 @@ const Images = () => {
           alt="food"
           placeholder="dominantColor"
           layout="fullWidth"
-          width={200}
           className="example-img"
           as="article"
         />
@@ -54,9 +54,13 @@ const Wrapper = styled.section`
   }
   .example-img {
     border-radius: 1rem;
+    height: 300px;
   }
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .example-img {
+    height: 200px;
   }
 `
 
