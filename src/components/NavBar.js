@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiAlignJustify } from "react-icons/fi"
 import logo from "../assets/images/logo.svg"
 
 const NavBar = () => {
+  const [show, setShow] = useState(false)
+
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -11,29 +13,45 @@ const NavBar = () => {
           <Link to="/">
             <img src={logo} alt="simply recipes logo" />
           </Link>
-          <button className="nav-btn">
+          <button className="nav-btn" onClick={() => setShow(!show)}>
             <FiAlignJustify />
           </button>
         </div>
-        <div className="nav-links show-links">
-          <Link to="/" className="nav-link" activeClassName="active-link">
+        <div className={show ? "nav-links show-links" : "nav-links"}>
+          <Link
+            to="/"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
             Home
           </Link>
-          <Link to="/about" className="nav-link" activeClassName="active-link">
+          <Link
+            to="/about"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
             About
           </Link>
           <Link
             to="/Recipes"
             className="nav-link"
             activeClassName="active-link"
+            onClick={() => setShow(false)}
           >
             Recipes
           </Link>
-          <Link to="/tags" className="nav-link" activeClassName="active-link">
+          <Link
+            to="/tags"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => setShow(false)}
+          >
             Tags
           </Link>
           <div className="nav-link contact-link">
-            <Link to="/contact" className="btn">
+            <Link to="/contact" className="btn" onClick={() => setShow(false)}>
               Contact
             </Link>
           </div>
