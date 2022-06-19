@@ -6,7 +6,7 @@ const Error = () => {
       <main className="error-page">
         <section>
           <h1>404</h1>
-          <p>page not found</p>
+          <h3>page not found</h3>
         </section>
       </main>
     </Layout>
