@@ -20,7 +20,6 @@ const query = graphql`
     }
   }
 `
-const pathToImage = getImage(image)
 
 const Gallery = () => {
   const data = useStaticQuery(query)
